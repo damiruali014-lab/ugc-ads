@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI UGC Video Ads for Product Brands</title>
+<meta name="description" content="Scroll-stopping AI UGC-style vertical video ads for DTC and e-commerce brands, plus Kaspi, Shopee and TikTok Shop sellers. Test pack from $250.">
+<meta name="theme-color" content="#0e0d0c">
+<meta property="og:title" content="AI UGC Video Ads for Product Brands">
+<meta property="og:description" content="Vertical UGC-style ads that look native on TikTok, Reels and Shorts. Packs from $250.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="media/haluna.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff5a36'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0e0d0c; --bg2:#171513; --card:#1d1a17; --line:#2e2a26;
+  --text:#f4efe9; --muted:#a39b91; --accent:#ff5a36; --accent-ink:#1a0803;
+  --radius:22px;
+  --font: ui-sans-serif, -apple-system, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(14,13,12,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:18px;font-size:.9rem;color:var(--muted)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);font-weight:700;border-radius:999px;padding:.8rem 1.4rem;text-decoration:none;font-size:1rem;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.sm{padding:.5rem 1rem;font-size:.9rem}
+@media (max-width:640px){.nav-links .hide-sm{display:none}}
+
+/* hero */
+.hero{padding:72px 0 28px;text-align:center}
+.eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.03em;max-width:16ch;margin:0 auto 18px}
+.lead{color:var(--muted);font-size:clamp(1rem,2.2vw,1.2rem);max-width:56ch;margin:0 auto 28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px;font-size:.85rem;color:var(--muted)}
+.chips span{border:1px solid var(--line);padding:.3rem .8rem;border-radius:999px}
+
+/* reel */
+.reel{padding:36px 0 64px}
+.reel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:start}
+@media (max-width:900px){.reel-grid{grid-template-columns:1fr;gap:56px;max-width:360px;margin-inline:auto}}
+.ad{display:flex;flex-direction:column;gap:16px}
+.phone{position:relative;aspect-ratio:9/16;border-radius:34px;padding:8px;background:linear-gradient(160deg,#3a342e,#15130f);box-shadow:0 30px 60px -20px rgba(0,0,0,.7),inset 0 0 0 1px #4a423a}
+.screen{position:relative;width:100%;height:100%;border-radius:27px;overflow:hidden;background:#000;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.screen video{width:100%;height:100%;object-fit:cover;display:block}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:28%;height:6px;border-radius:6px;background:rgba(0,0,0,.55);z-index:3;pointer-events:none}
+.sound{position:absolute;right:12px;bottom:12px;z-index:3;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:.78rem;font-weight:600;padding:.45rem .75rem;border-radius:999px;pointer-events:none;transition:background .2s}
+.sound svg{width:16px;height:16px;flex:none}
+.screen.on .sound{background:var(--accent);color:var(--accent-ink)}
+.screen .play{position:absolute;inset:0;display:none;place-items:center;z-index:2;background:rgba(0,0,0,.25)}
+.screen.paused .play{display:grid}
+.play i{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center}
+.play svg{width:26px;height:26px;fill:#111;margin-left:3px}
+.progress{position:absolute;left:0;bottom:0;height:3px;background:var(--accent);width:0;z-index:3}
+.meta{padding:0 6px}
+.fmt{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hook{font-size:1.15rem;font-weight:600;line-height:1.3;margin:6px 0 10px;letter-spacing:-.01em}
+.tag{display:inline-block;font-size:.75rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.2rem .65rem}
+
+/* sections */
+section{scroll-margin-top:70px}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
+.sub{color:var(--muted);max-width:58ch;margin-bottom:36px}
+
+.for{padding:56px 0;border-top:1px solid var(--line)}
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:700px){.for-grid{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.panel h3{font-size:1.2rem;margin-bottom:6px}
+.panel p{color:var(--muted)}
+
+.packs{padding:64px 0;border-top:1px solid var(--line)}
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+@media (max-width:900px){.pack-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+.pack{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
+.pack.pop{border-color:var(--accent);background:linear-gradient(180deg,#26150f,var(--card) 60%)}
+.badge{position:absolute;top:-12px;left:28px;background:var(--accent);color:var(--accent-ink);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:999px}
+.pack h3{font-size:1.1rem;color:var(--muted);font-weight:600}
+.price{font-size:2.3rem;font-weight:800;letter-spacing:-.03em;margin:8px 0 4px}
+.price small{font-size:1rem;font-weight:500;color:var(--muted);letter-spacing:0}
+.what{font-weight:600;margin-bottom:16px}
+.pack ul{list-style:none;padding:0;display:grid;gap:10px;color:var(--muted);font-size:.95rem;margin-bottom:6px}
+.pack li{display:flex;gap:10px}
+.pack li::before{content:"";flex:none;width:16px;height:16px;margin-top:4px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.note{color:var(--muted);font-size:.85rem;text-align:center;margin-top:28px}
+
+.cta{padding:72px 0 56px;border-top:1px solid var(--line);text-align:center}
+.cta p{color:var(--muted);max-width:48ch;margin:0 auto 26px}
+.cta small{display:block;margin-top:14px;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer a{color:var(--text)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">AI&nbsp;UGC<span>.</span>ads</a>
+    <div class="nav-links">
+      <a href="#reel" class="hide-sm">Reel</a>
+      <a href="#packs" class="hide-sm">Packages</a>
+      <a href="https://damiruali014-lab.github.io/" data-main>← Main portfolio</a>
+      <a class="btn sm" href="#contact" data-contact>Get a quote</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">AI UGC-style video ads</span>
+    <h1>Ads that look like a real person made them.</h1>
+    <p class="lead">Vertical, hook-first video ads for DTC and e-commerce brands, and for Kaspi, Shopee and TikTok Shop sellers. Fast turnaround, many hooks to test, no creator logistics.</p>
+    <a class="btn" href="#contact" data-contact>Get a quote</a>
+    <div class="chips"><span>9:16 vertical</span><span>Hook-first scripts</span><span>Captions + end card</span><span>TikTok · Reels · Shorts</span></div>
+  </div>
+</header>
+
+<main>
+<section class="reel" id="reel">
+  <div class="wrap">
+    <div class="reel-grid">
+
+      <article class="ad">
+        <div class="phone"><div class="screen" data-name="HALUNA">
+          <i class="notch"></i>
+          <video muted loop playsinline preload="none" poster="media/haluna.jpg" data-src="media/haluna.mp4" aria-label="HALUNA sunscreen concept ad"></video>
+          <div class="play"><i><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></i></div>
+          <div class="sound"></div><div class="progress"></div>
+        </div></div>
+        <div class="meta">
+          <div class="fmt">Studio · White-cast test · 12s</div>
+          <p class="hook">“Okay, white-cast test. No filter.”</p>
+          <span class="tag">Concept ad · AI-generated</span>
+        </div>
+      </article>
+
+      <article class="ad">
+        <div class="phone"><div class="screen" data-name="LUMEO">
+          <i class="notch"></i>
+          <video muted loop playsinline preload="none" poster="media/lumeo.jpg" data-src="media/lumeo.mp4" aria-label="LUMEO sparkling yuzu drink concept ad"></video>
+          <div class="play"><i><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></i></div>
+          <div class="sound"></div><div class="progress"></div>
+        </div></div>
+        <div class="meta">
+          <div class="fmt">Home desk · “3PM reset” · 12s</div>
+          <p class="hook">“Why does 3PM feel like midnight?”</p>
+          <span class="tag">Concept ad · AI-generated</span>
+        </div>
+      </article>
+
+      <article class="ad">
+        <div class="phone"><div class="screen" data-name="KIVO">
+          <i class="notch"></i>
+          <video muted loop playsinline preload="none" poster="media/kivo.jpg" data-src="media/kivo.mp4" aria-label="KIVO magnetic power bank concept ad"></video>
+          <div class="play"><i><svg viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg></i></div>
+          <div class="sound"></div><div class="progress"></div>
+        </div></div>
+        <div class="meta">
+          <div class="fmt">Night street · 3% battery panic · 10s</div>
+          <p class="hook">“3%... and I still need the map home.”</p>
+          <span class="tag">Concept ad · AI-generated</span>
+        </div>
+      </article>
+
+    </div>
+    <p class="note">Tap a phone for sound. HALUNA, LUMEO and KIVO are fictional brands made as concept ads.</p>
+  </div>
+</section>
+
+<section class="for">
+  <div class="wrap">
+    <div class="for-grid">
+      <div class="panel"><h3>Product brands (DTC / e-commerce)</h3><p>Test several angles and hooks per product before you spend on creators or a shoot. Winners get scaled, losers cost you very little.</p></div>
+      <div class="panel"><h3>Local sellers (Kaspi, Shopee, TikTok Shop)</h3><p>Short, native-looking product videos for your listings and shop feed, in the format and pace buyers already scroll.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="packs" id="packs">
+  <div class="wrap">
+    <h2>Packages</h2>
+    <p class="sub">Every ad is vertical 9:16, built around a hook meant to stop the scroll. Prices are a range because they depend on how many products, scenes and revisions you need.</p>
+    <div class="pack-grid">
+      <div class="pack">
+        <h3>Test pack</h3>
+        <div class="price">$250–400</div>
+        <p class="what">1 concept + 3 hooks</p>
+        <ul><li>One ad concept for your product</li><li>3 different opening hooks to A/B test</li><li>Good first step to see what lands</li></ul>
+      </div>
+      <div class="pack pop">
+        <span class="badge">Most popular</span>
+        <h3>Launch pack</h3>
+        <div class="price">$700–1,000</div>
+        <p class="what">3 concepts × 2 hooks</p>
+        <ul><li>6 ad variations across 3 concepts</li><li>Captions on every video</li><li>Branded end card</li></ul>
+      </div>
+      <div class="pack">
+        <h3>Monthly</h3>
+        <div class="price">$1,500+ <small>/ month</small></div>
+        <p class="what">8–10 ads every month</p>
+        <ul><li>A steady supply of fresh creative</li><li>Iterate on what is winning</li><li>Priority turnaround</li></ul>
+      </div>
+    </div>
+    <p class="note">Not sure which fits? Tell me your product and where you sell, and I’ll recommend one.</p>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Got a product? Let’s make a test ad.</h2>
+    <p>Send me the product, where you sell it, and who you want to reach. I’ll reply with a concept and a price.</p>
+    <a class="btn" href="#" data-contact id="contact-btn">Message me</a>
+    <small id="contact-hint"></small>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> AI UGC ads · All sample brands are fictional.</span>
+    <span><a href="https://damiruali014-lab.github.io/" data-main>See my main portfolio →</a></span>
+  </div>
+</footer>
+
+<script>
+/* ---- EDIT THESE ---- */
+var CONTACT = {
+  email: "damiruali014@gmail.com",
+  whatsapp: "77784760435",              // digits only with country code, e.g. "77011234567". Leave "" to use email.
+  subject: "UGC ad inquiry",
+  message: "Hi! I'd like a UGC ad for my product. Product: \nWhere I sell: "
+};
+/* -------------------- */
+
+(function(){
+  var enc = encodeURIComponent;
+  var btn = document.getElementById('contact-btn');
+  var hint = document.getElementById('contact-hint');
+  if (CONTACT.whatsapp) {
+    btn.href = "https://wa.me/" + CONTACT.whatsapp + "?text=" + enc(CONTACT.message);
+    btn.textContent = "Message me on WhatsApp";
+    hint.textContent = "or email " + CONTACT.email;
+  } else {
+    btn.href = "mailto:" + CONTACT.email + "?subject=" + enc(CONTACT.subject) + "&body=" + enc(CONTACT.message);
+    btn.textContent = "Email me";
+    hint.textContent = CONTACT.email;
+  }
+  // header buttons just scroll to the contact section
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var ICON_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>Tap for sound';
+  var ICON_ON  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 010 7M19 5a10 10 0 010 14"/></svg>Sound on';
+
+  var screens = [].slice.call(document.querySelectorAll('.screen'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var userPaused = new WeakSet();
+
+  function load(v){ if (!v.src && v.dataset.src) { v.src = v.dataset.src; v.preload = 'auto'; } }
+  function setUI(s){
+    var v = s.querySelector('video');
+    s.classList.toggle('on', !v.muted);
+    s.classList.toggle('paused', v.paused);
+    s.querySelector('.sound').innerHTML = v.muted ? ICON_OFF : ICON_ON;
+  }
+  function muteAll(except){
+    screens.forEach(function(s){
+      var v = s.querySelector('video');
+      if (s !== except && !v.muted){ v.muted = true; setUI(s); }
+    });
+  }
+  function play(s){
+    var v = s.querySelector('video');
+    load(v);
+    var p = v.play();
+    if (p && p.catch) p.catch(function(){ setUI(s); });
+    setUI(s);
+  }
+  function pause(s){ s.querySelector('video').pause(); }
+
+  screens.forEach(function(s){
+    var v = s.querySelector('video');
+    setUI(s);
+    v.addEventListener('timeupdate', function(){
+      if (v.duration) s.querySelector('.progress').style.width = (v.currentTime / v.duration * 100) + '%';
+    });
+    v.addEventListener('pause', function(){ setUI(s); });
+    v.addEventListener('play', function(){ setUI(s); });
+
+    s.addEventListener('click', function(){
+      load(v);
+      if (v.paused){            // paused (reduced motion / blocked autoplay): start with sound
+        userPaused.delete(s);
+        muteAll(s); v.muted = false; play(s);
+      } else if (v.muted){      // first tap: sound on, other clips muted
+        muteAll(s); v.muted = false; setUI(s);
+      } else {                  // second tap: back to muted
+        v.muted = true; setUI(s);
+      }
+    });
+  });
+
+  // preload a little before they enter view
+  var loader = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) load(e.target.querySelector('video')); });
+  }, { rootMargin: '100% 0px' });
+  screens.forEach(function(s){ loader.observe(s); });
+
+  // autoplay when mostly visible, pause when away
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var s = e.target;
+      if (e.isIntersecting && !reduce) play(s);
+      else { pause(s); if (!e.isIntersecting) { var v = s.querySelector('video'); if (!v.muted){ v.muted = true; setUI(s); } } }
+    });
+  }, { threshold: 0.6 });
+  screens.forEach(function(s){ io.observe(s); });
+
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) screens.forEach(pause);
+  });
+})();
+</script>
+</body>
+</html>
